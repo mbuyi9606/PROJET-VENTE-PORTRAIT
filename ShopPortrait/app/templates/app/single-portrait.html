@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<section class="title-header" style="padding-left: 15% ;">
+    <span>Admin</span>
+</section>
+
+<section class="form-control">
+
+    <div class="message-succes">
+        {% if message %}
+        {{message}}
+        {% endif %}
+    </div>
+
+    <form method="post" action="" enctype="multipart/form-data">
+
+        {% csrf_token %}
+
+        {{form.as_p}}
+
+        <button type="submit" class="submit-bouton">Valider</button>
+    </form>
+
+</section>
+
+{% endblock %}

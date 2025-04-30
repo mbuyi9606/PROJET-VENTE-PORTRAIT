@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="title-header">
+    <h1>Les Portraits</h1>
+</section>
+
+<section class="portraits-liste">
+
+    {% for portrait in portraits %}
+    <div class="div-1">
+        <div class="div-2" class="div-2">
+            <img src="{{portrait.image.url}}" alt="">
+        </div>
+        <div class="div-3">
+            <span>Titre: {{portrait.titre}} </span> <br>
+            <span class="description-portrait">
+                {{portrait.description}}
+            </span>
+        </div>
+    </div>
+    {% endfor %}
+
+</section>
+
+{% endblock %}

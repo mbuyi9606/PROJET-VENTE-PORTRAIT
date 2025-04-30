@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<section class="title-header" style="padding-left: 15% ;">
+    <span>Admin</span>
+</section>
+
+<section class="form-control">
+
+    <div class="message-succes">
+        {% if message %}
+        {{message}}
+        {% endif %}
+    </div>
+
+    <form method="post" action="" enctype="multipart/form-data">
+
+        {% csrf_token %}
+
+        {{form.as_p}}
+
+        <button type="submit" class="submit-bouton">Valider</button>
+    </form>
+
+</section>
+
+<section class="title-header">
+    <h1>Les Portraits</h1>
+</section>
+
+<section class="portraits-liste">
+
+    {% for portrait in portraits %}
+    <div class="div-1">
+        <div class="div-2" class="div-2">
+            <img src="{{portrait.image.url}}" alt="">
+        </div>
+        <div class="div-3">
+            <a href="{% url 'single_portrait' id=portrait.id %}">
+                <button class="submit-bouton">modifier</button>
+            </a>
+            <a href="{% url 'delete' id=portrait.id %}">
+                <button class="submit-bouton" style="background-color: red ;">Suprimer</button>
+            </a>
+
+            <br>
+            <span>Titre: {{portrait.titre}} </span> <br>
+            <span class="description-portrait">
+                {{portrait.description}}
+            </span>
+        </div>
+    </div>
+    {% endfor %}
+</section>
+
+
+{% endblock %}

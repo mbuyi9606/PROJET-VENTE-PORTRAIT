@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+
+<body>
+
+    <span style="background-color: #1f363d;"></span>
+    <span style="background-color: #40798c;"></span>
+    <span style="background-color: #70a9a1;"></span>
+    <span style="background-color: #9ec1a3;"></span>
+    <span style="background-color: #cfe0c3;"></span>
+
+    <header>
+        <nav class="nav-header">
+            <a href="{% url 'accueil' %}" class="a-header">Accueil</a>
+            <a href="{% url 'portraits' %}" class="a-header"> Portraits</a>
+            <a href="{% url 'administration' %}" class="a-header">Admin</a>
+        </nav>
+    </header>
+
+    {% block content %}
+
+    {% endblock %}
+
+
+    <footer>
+        <div class="div-part">
+            <h3>Adresses</h3>
+            <div>
+                Avénue Kigoma 162, Huilerie, kinshasa <br>
+                Kinshasa/Rdcongo
+            </div>
+        </div>
+        <div class="div-part">
+            <h3>Contacts</h3>
+            <div>
+                +243 897106515/ +243 812560283 <br>
+                Email : PortraitShop@gmail.com
+            </div>
+        </div>
+        <div class="div-part" style="margin-right: 0%;">
+            <h3>A propos</h3>
+            <div>
+                Nous sommes une boutique de vente de portrait <br>
+                à kinshasa/ Rdcongo
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

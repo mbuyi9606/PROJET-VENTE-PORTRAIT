@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+
+<body>
+
+    <section style="padding: 10% 20%;">
+        <form method="post" action="" style="background-color: #9ec1a3; padding: 8%; border-radius: 10px;">
+
+            <div style=" font-family: sans-serif; font-size: 20px; margin-bottom: 2%;">
+                <span>Login</span>
+            </div>
+
+            {% csrf_token %}
+
+            <input class="input-form" type="text" name="login" id="" placeholder="Login"> <br> <br>
+            <input class="input-form" type="text" name="password" id="" placeholder="Password"> <br> <br>
+
+            <button type="submit" class="submit-bouton">Connexion</button>
+            <a href="" style="font-size: 17px; font-family:sans-serif; color:aliceblue; ">J'ai un compte</a>
+
+        </form>
+    </section>
+
+
+</body>
+
+</html>
